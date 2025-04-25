@@ -1,0 +1,199 @@
+.task-item {
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-12) var(--space-16);
+  margin-bottom: var(--space-8);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 3px solid var(--color-primary-500);
+  transition: all var(--transition-fast);
+}
+
+.task-item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.task-item.completed {
+  border-left-color: var(--color-success-500);
+  background-color: var(--color-success-50);
+}
+
+.task-item.missed {
+  border-left-color: var(--color-error-500);
+  background-color: var(--color-error-50);
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.task-status {
+  margin-right: var(--space-12);
+  cursor: pointer;
+}
+
+.status-icon {
+  font-size: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.status-icon.completed {
+  color: var(--color-success-500);
+}
+
+.status-icon.missed {
+  color: var(--color-error-500);
+}
+
+.status-icon.pending {
+  color: var(--color-neutral-400);
+}
+
+.task-status:hover .status-icon {
+  transform: scale(1.1);
+}
+
+.task-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-title {
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+  color: var(--color-neutral-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+}
+
+.task-item.completed .task-title {
+  color: var(--color-neutral-500);
+  text-decoration: line-through;
+}
+
+.optional-icon {
+  color: var(--color-brown-500);
+  margin-left: var(--space-4);
+  font-size: 0.85rem;
+}
+
+.task-meta {
+  display: flex;
+  font-size: 0.75rem;
+  color: var(--color-neutral-500);
+  gap: var(--space-16);
+}
+
+.task-date {
+  display: flex;
+  align-items: center;
+}
+
+.task-points {
+  font-weight: 500;
+}
+
+.task-item.completed .task-points {
+  color: var(--color-success-600);
+}
+
+.task-item.missed .task-points {
+  color: var(--color-error-600);
+}
+
+.task-actions {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.action-button {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  color: var(--color-neutral-500);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  padding: 0;
+}
+
+.action-button:hover.complete {
+  background-color: var(--color-success-100);
+  color: var(--color-success-600);
+}
+
+.action-button:hover.miss {
+  background-color: var(--color-error-100);
+  color: var(--color-error-600);
+}
+
+.action-button:hover.edit {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-600);
+}
+
+.action-button:hover.delete {
+  background-color: var(--color-error-100);
+  color: var(--color-error-600);
+}
+
+.task-edit-input {
+  width: 100%;
+  font-size: 1rem;
+  padding: var(--space-4) var(--space-8);
+  border: 1px solid var(--color-primary-300);
+  border-radius: var(--radius-sm);
+}
+
+.edit-actions {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.edit-actions .action-button {
+  width: auto;
+  padding: 0 var(--space-8);
+  font-size: 0.75rem;
+}
+
+.edit-actions .save {
+  background-color: var(--color-primary-500);
+  color: white;
+}
+
+.edit-actions .save:hover {
+  background-color: var(--color-primary-600);
+}
+
+.edit-actions .cancel {
+  background-color: var(--color-neutral-200);
+}
+
+.edit-actions .cancel:hover {
+  background-color: var(--color-neutral-300);
+}
+
+@media (max-width: 480px) {
+  .task-actions {
+    position: absolute;
+    right: var(--space-12);
+    opacity: 1 !important;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: var(--radius-md);
+    padding: var(--space-2);
+  }
+}

@@ -1,0 +1,234 @@
+.daily-view {
+  position: relative;
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-24);
+}
+
+.view-title h2 {
+  margin-bottom: var(--space-4);
+}
+
+.view-subtitle {
+  color: var(--color-neutral-600);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.view-actions {
+  display: flex;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.date-picker-container {
+  position: relative;
+}
+
+.date-picker-button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-12);
+  background-color: white;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  color: var(--color-neutral-700);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.date-picker-button:hover {
+  border-color: var(--color-primary-400);
+  background-color: var(--color-primary-50);
+}
+
+.add-task-button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-8) var(--space-12);
+  background-color: var(--color-primary-500);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.add-task-button:hover {
+  background-color: var(--color-primary-600);
+}
+
+.daily-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
+}
+
+.stat-card {
+  background-color: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-16);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-8);
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-neutral-800);
+}
+
+.stat-value.positive {
+  color: var(--color-success-600);
+}
+
+.stat-value.negative {
+  color: var(--color-error-600);
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background-color: var(--color-neutral-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--color-primary-500);
+  border-radius: var(--radius-full);
+}
+
+.progress-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary-600);
+  min-width: 60px;
+}
+
+.tasks-container {
+  margin-top: var(--space-24);
+}
+
+.task-section {
+  margin-bottom: var(--space-32);
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-12);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-primary-500);
+  border-radius: var(--radius-full);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-48) var(--space-24);
+  background-color: white;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-icon {
+  font-size: 3rem;
+  color: var(--color-neutral-400);
+  margin-bottom: var(--space-16);
+}
+
+.empty-state h3 {
+  margin-bottom: var(--space-8);
+}
+
+.empty-state p {
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-24);
+  max-width: 400px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-16);
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .view-header {
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+  
+  .view-actions {
+    width: 100%;
+  }
+  
+  .daily-stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+}
+
+@media (max-width: 480px) {
+  .date-picker-button span {
+    display: none;
+  }
+  
+  .add-task-button span {
+    display: none;
+  }
+  
+  .view-actions {
+    justify-content: space-between;
+  }
+}

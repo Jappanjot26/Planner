@@ -1,0 +1,156 @@
+.new-task-form-container {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 550px;
+  padding: var(--space-24);
+  position: relative;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-24);
+}
+
+.form-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  color: var(--color-neutral-600);
+  cursor: pointer;
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.close-button:hover {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-800);
+}
+
+.form-group {
+  margin-bottom: var(--space-16);
+}
+
+.form-row {
+  display: flex;
+  gap: var(--space-16);
+  margin-bottom: var(--space-16);
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-4);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-neutral-700);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--space-8) 0;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: var(--space-8);
+  width: 16px;
+  height: 16px;
+}
+
+input[type="text"],
+input[type="number"],
+.date-picker {
+  width: 100%;
+  padding: var(--space-8) var(--space-12);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  transition: all var(--transition-fast);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+.date-picker:focus {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 2px var(--color-primary-100);
+  outline: none;
+}
+
+input.error,
+.date-picker.error {
+  border-color: var(--color-error-500);
+}
+
+.error-message {
+  color: var(--color-error-500);
+  font-size: 0.75rem;
+  margin-top: var(--space-4);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-12);
+  margin-top: var(--space-24);
+}
+
+/* React DatePicker customization */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.react-datepicker {
+  font-family: var(--font-family) !important;
+  border-color: var(--color-neutral-200) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.react-datepicker__header {
+  background-color: var(--color-primary-50) !important;
+  border-bottom-color: var(--color-neutral-200) !important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: var(--color-primary-700) !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--color-primary-500) !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: var(--color-primary-100) !important;
+}
+
+@media (max-width: 600px) {
+  .new-task-form-container {
+    padding: var(--space-16);
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: var(--space-12);
+  }
+}
