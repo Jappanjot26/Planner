@@ -18,7 +18,7 @@ export const PlannerProvider = ({ children }) => {
   })
 
   // API base URL
-  const API_URL = 'http://localhost:3001/api'
+  const API_URL = 'https://planner-production-c00c.up.railway.app/api'
 
   // Fetch all tasks
   const fetchTasks = useCallback(async () => {
